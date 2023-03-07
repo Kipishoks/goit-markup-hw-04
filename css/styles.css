@@ -203,8 +203,9 @@ a {text-decoration: none;
    .hero-background {
     /* background-image: url(../image/darkbg.png), url(../image/herotitle.jpg) ; */
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../image/herotitle.jpg);
-    width: 100%;
+    max-width: 1440px;
     height: auto;
+    margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -250,17 +251,13 @@ a {text-decoration: none;
 
 .feature-list {
     display: flex;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 24px;
     color: var(--dark);
 }
 
 .feature-item {
-display: inline-block;
-width: calc((100% - 72px) / 4);
-}
-
-.feature-item:not(:last-child) {
-    margin-right: 24px;
+     flex-basis: calc((100% - 72px) / 4) ;
 }
 
  .icon-card{
@@ -269,6 +266,7 @@ width: calc((100% - 72px) / 4);
     border-radius: 4px;
     padding-top: 24px;
     padding-bottom: 24px;
+    min-width: 264px;
  }
 
 .icon {
@@ -281,11 +279,11 @@ width: calc((100% - 72px) / 4);
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--dark);
-
+    margin-top: 8px;
 }
 
 .feature-text {
-    max-width: 264px;
+    /* max-width: 264px; */
     color: var(--text);
 }
 
@@ -298,7 +296,9 @@ width: calc((100% - 72px) / 4);
     gap: 24px;
   }
 
-  .works-item {}
+  .works-item {
+    flex-basis: calc(100% - 48px) / 3;
+  }
 
   .image {
      width: 100%; 
@@ -379,10 +379,7 @@ width: calc((100% - 72px) / 4);
 }
 
 .customers-item {
-    width: 168px;
-    height: 68px;
-    border: 1px solid var(--subtle-text);
-    border-radius: 4px;
+    flex-basis: calc(100% - 120px) / 6;
     }
 
 .customers-link {
@@ -390,7 +387,10 @@ width: calc((100% - 72px) / 4);
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 88px;
+    padding: 0 32px;
+    border: 1px solid var(--subtle-text);
+    border-radius: 4px;
     color: var(--pressed-state);
     
 }
@@ -398,17 +398,19 @@ width: calc((100% - 72px) / 4);
 .customers-link:is(:focus, :hover){
         border: 1px solid var(--pressed-state);
         color: var(--pressed-state);
+       
     }
 
 .customers-icon {
     width: 104px;
     height: 56px;
     fill: #8e8f99;
+    
 }
 
 .customers-link:is(:focus, :hover) .customers-icon {
     fill: currentColor;
-}
+ }
 
 /* ------------------------Footer ----------------------------------*/
 .footer {
